@@ -6,6 +6,7 @@
         <img class="swiper-img" :src="item.imgUrl" />
       </swiper-slide>
       <!-- 用于分页 -->
+      <!-- slot插槽 -->
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
   </div>

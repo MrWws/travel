@@ -110,11 +110,13 @@ export default {
 //     }
 @import '~styles/varibles.styl';
 @import '~styles/mixins.styl';
-  .icons
+  .icons >>> .swiper-container
     overflow: hidden
     width: 100%
     height: 0
     padding-bottom: 50%
+  .icons
+    margin-top .1rem
     .icon
       height: 0
       position: relative
