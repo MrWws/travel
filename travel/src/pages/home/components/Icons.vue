@@ -18,67 +18,14 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props:{
+    list: Array
+  },
   data() {
     return {
       swiperOption: {
         pagination: '.swiper-pagination'
-      },
-      iconList: [
-        {
-          id: '0001',
-          imgUrl:
-            'http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png',
-          desc: '热门景点'
-        },
-        {
-          id: '0002',
-          imgUrl:
-            'http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png',
-          desc: '滑雪季'
-        },
-        {
-          id: '0003',
-          imgUrl:
-            'http://img1.qunarzz.com/piao/fusion/1710/a6/83f636bd75ae6302.png',
-          desc: '泡温泉'
-        },
-        {
-          id: '0004',
-          imgUrl:
-            'http://img1.qunarzz.com/piao/fusion/1611/35/2640cab202c41b02.png',
-          desc: '动植园'
-        },
-        {
-          id: '0005',
-          imgUrl:
-            'http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png',
-          desc: '热门景点'
-        },
-        {
-          id: '0006',
-          imgUrl:
-            'http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png',
-          desc: '滑雪季'
-        },
-        {
-          id: '0007',
-          imgUrl:
-            'http://img1.qunarzz.com/piao/fusion/1710/a6/83f636bd75ae6302.png',
-          desc: '泡温泉'
-        },
-        {
-          id: '0008',
-          imgUrl:
-            'http://img1.qunarzz.com/piao/fusion/1611/35/2640cab202c41b02.png',
-          desc: '动植园'
-        },
-        {
-          id: '0009',
-          imgUrl:
-            'http://img1.qunarzz.com/piao/fusion/1611/35/2640cab202c41b02.png',
-          desc: '动植园'
-        }
-      ]
+      }
     }
   },
   // 计算属性里的算法就是帮助我们把一维的九条数组拆分成二维数组
@@ -87,7 +34,7 @@ export default {
     pages() {
       const pages = []
       // forEach() 方法用于调用数组的每个元素，并将元素传递给回调函数。
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []

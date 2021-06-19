@@ -1,8 +1,8 @@
 <template>
   <!-- 在swiper外面加上一层div，是为了防止在网速慢的情况下抖动的bug，用户体验不好 -->
   <div class="warpper">
-    <swiper :options="swiperOption">
-      <swiper-slide v-for="item in swiperList" :key="item.id">
+    <swiper :options="swiperOption" v-if="showSwiper">
+      <swiper-slide v-for="item of list" :key="item.id">
         <img class="swiper-img" :src="item.imgUrl" />
       </swiper-slide>
       <!-- 用于分页 -->
@@ -15,6 +15,9 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props: {
+    list: Array
+  },
   // ES6 data后面要有空格
   data () {
     return {
@@ -27,19 +30,12 @@ export default {
         autoplay: 1000,
         // 滑动速度
         speed: 500
-      },
-      swiperList: [
-        {
-          id: '0001',
-          imgUrl:
-            'http://img1.qunarzz.com/piao/fusion/1802/e3/62ce7362ca051d02.jpg_640x200_6db551b7.jpg'
-        },
-        {
-          id: '0002',
-          imgUrl:
-            'http://img1.qunarzz.com/piao/fusion/1801/93/ce59d182aca07102.jpg_640x200_ba03d44c.jpg'
-        }
-      ]
+      }
+    }
+  },
+  computed: {
+    showSwiper() {
+      return this.list.length
     }
   }
 }
