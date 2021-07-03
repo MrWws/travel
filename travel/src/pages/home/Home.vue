@@ -49,6 +49,7 @@ export default {
   },
   methods: {
     getHomeInfo() {
+      //config/index.js定义/api
       axios.get('/api/index.json?city=' + this.city)
       .then(this.getHomeInfoSucc)
     },
